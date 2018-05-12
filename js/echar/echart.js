@@ -380,6 +380,271 @@ EasyChart.prototype = {
         }
         return option
     },
+    // 嵌套环形图
+    qthxt() {
+        option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            title: {
+                text: ' 药品抽验情况',
+                x: 'center',
+            },
+            legend: {
+                orient: 'vertical',
+                x: 'left',
+
+                data: ['国抽批次数', '市抽批次数', '其他', '合格', '不合格']
+            },
+            series: [{
+                    name: '药品抽检情况',
+                    type: 'pie',
+                    selectedMode: 'single',
+                    radius: [0, '60%'],
+
+                    label: {
+                        normal: {
+                            position: 'inner'
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data: [
+                        { value: 1000, name: '国抽批次数' },
+                        { value: 1600, name: '市抽批次数' },
+                        { value: 800, name: '其他' }
+                    ]
+                },
+                {
+                    name: '药品抽检情况',
+                    type: 'pie',
+                    radius: ['60%', '75%'],
+                    label: {
+                        normal: {
+                            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                            backgroundColor: '#eee',
+                            borderColor: '#aaa',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            show: false,
+                            // shadowBlur:3,
+                            // shadowOffsetX: 2,
+                            // shadowOffsetY: 2,
+                            // shadowColor: '#999',
+                            // padding: [0, 7],
+                            rich: {
+                                a: {
+                                    color: '#999',
+                                    lineHeight: 22,
+                                    align: 'center'
+                                },
+                                // abg: {
+                                //     backgroundColor: '#333',
+                                //     width: '100%',
+                                //     align: 'right',
+                                //     height: 22,
+                                //     borderRadius: [4, 4, 0, 0]
+                                // },
+                                hr: {
+                                    borderColor: '#aaa',
+                                    width: '100%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                b: {
+                                    fontSize: 16,
+                                    lineHeight: 33
+                                },
+                                per: {
+                                    color: '#eee',
+                                    backgroundColor: '#334455',
+                                    padding: [2, 4],
+                                    borderRadius: 2
+                                }
+                            }
+                        }
+                    },
+                    data: [
+                        { value: 800, name: '合格' },
+                        { value: 200, name: '不合格' },
+                        { value: 1500, name: '合格' },
+                        { value: 100, name: '不合格' },
+                        { value: 700, name: '合格' },
+                        { value: 100, name: '不合格' },
+
+                    ]
+                }
+            ]
+        }
+        return option
+    },
+    // 仪表盘
+    ybp() {
+        option = {
+            title: {
+                text: '抽验计划完成情况',
+                x: 'center'
+            },
+            tooltip: {
+                formatter: "{a} <br/>{b} : {c}%"
+            },
+
+            toolbox: {
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            series: [{
+                name: '业务指标',
+                type: 'gauge',
+                detail: { formatter: '{value}%' },
+                data: [{ value: 66.66, name: '抽验计划完成率' }]
+            }]
+        };
+        return option
+    },
+    // 耳机Bar
+    twoBar() {
+
+        option = {
+            color: ['#003366', '#e5323e'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            title: {
+                text: '药品抽检情况(按事二级分类)',
+                x: 'left'
+            },
+            legend: {
+                data: ['合格', '不合格']
+
+            },
+            calculable: true,
+            xAxis: [{
+                type: 'category',
+                axisTick: { show: false },
+                data: ['专题/专项抽验', '摸底性抽验', '评价性抽验', '监督性抽验', '涉案抽验']
+            }],
+            yAxis: [{
+                type: 'value'
+            }],
+            series: [{
+                    name: '合格',
+                    type: 'bar',
+                    barGap: 0,
+                    data: [320, 332, 301, 334, 390]
+                },
+                {
+                    name: '不合格',
+                    type: 'bar',
+                    data: [20, 12, 11, 34, 20]
+                },
+
+            ]
+        };
+        return option
+    },
+    twobar2() {
+        option = {
+            color: ['#003366', '#e5323e'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            title: {
+                text: '各药品品种抽样情况',
+                x: 'left'
+            },
+            legend: {
+                data: ['合格', '不合格']
+
+            },
+            calculable: true,
+            xAxis: [{
+                type: 'category',
+                axisTick: { show: false },
+                data: ['H-化学药品', 'Z-中药', 'B-保健药品', 'S-生物制品', 'T-体外化学诊断试剂', 'F-药用辅料', 'J-进口分包装药品'],
+                axisLabel: {
+                    rotate: 25
+                }
+            }],
+            yAxis: [{
+                type: 'value'
+            }],
+            series: [{
+                    name: '合格',
+                    type: 'bar',
+                    barGap: 0,
+                    data: [320, 332, 301, 334, 390, 350, 320]
+                },
+                {
+                    name: '不合格',
+                    type: 'bar',
+                    data: [20, 18, 19, 34, 20, 22, 20]
+                },
+
+            ]
+        }
+        return option
+    },
+    pie1() {
+        option = {
+            title: {
+                text: this.data.name,
+                x: 'center',
+                y: 80
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 10,
+                data: ['不合格数', '合格数'],
+                top: 80
+            },
+            series: [{
+                name: '抽样批次',
+                type: 'pie',
+                radius: '70%',
+                center: ['50%', '60%'],
+                data: [
+                    { value: 10, name: '不合格数' },
+                    { value: 335, name: '合格数' }
+
+                ],
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                label: {
+                    normal: {
+                        show: false
+                    }
+                },
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+        return option
+    },
     setOption() {
         this.myChart.setOption(this.option);
     },
