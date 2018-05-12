@@ -6,8 +6,8 @@ let operator = {
         return (path + '.html')
     },
     router(path) {
-        console.log(path)
+        let iframe = $('#fd-Iframe');
+        iframe.get(0).src = operator.ifarme(path)
     }
 
 }
-console.log('OPERATOR')
