@@ -23,7 +23,7 @@
 	white-space: nowrap;
 }
 .fd-one{
-    display:inline-block;
+    float: left;
     background:url(../images/one.png) no-repeat;
     background-size:100% 100%;
     width:14px;
@@ -31,7 +31,7 @@
     margin-right:10px;
 }
 .fd-two{
-    display:inline-block;
+    float: left;
     background:url(../images/two.png) no-repeat;
     background-size:100% 100%;
     width:14px;
@@ -39,7 +39,7 @@
     margin-right:10px;
 }
 .fd-three{
-    display:inline-block;
+    float: left;
     background:url(../images/three.png) no-repeat;
     background-size:100% 100%;
     width:14px;
@@ -47,7 +47,7 @@
     margin-right:10px;
 }
 .fd-four{
-    display:inline-block;
+    float: left;
     background:url(../images/four.png) no-repeat;
     background-size:100% 100%;
     width:14px;
@@ -56,7 +56,7 @@
 
 }
 .fd-five{
-    display:inline-block;
+    float: left;
     background:url(../images/five.png) no-repeat;
     background-size:100% 100%;
     width:14px;
@@ -101,4 +101,24 @@
 	overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.fd-body .fd-card1,
+.fd-body .fd-card2,
+.fd-body .fd-card3 {
+	display: inline-block;
+	width: 64px;
+	height: 24px;
+	text-align: center;
+	line-height: 24px;
+	color: #fff;
+	border-radius: 2px;
+}
+.fd-body .fd-card1 {
+	background-color: #ff8383;
+}
+.fd-body .fd-card2 {
+	background-color: #ffcf83;
+}
+.fd-body .fd-card3 {
+	background-color: #9beca0;
 }
