@@ -331,6 +331,52 @@ EasyChart.prototype = {
         };
         return option
     },
+    // 普通线形图
+    setLine() {
+        var serieDate = {
+            name: '',
+            type: 'line',
+            stack: '总量',
+            data: []
+        }
+        var arr = new Array()
+        var that = this
+        $.each(this.data.data, function(k, v) {
+            var vDate = JSON.parse(JSON.stringify(serieDate))
+            vDate.name = that.data.ldata[k]
+            vDate.data = v
+            arr.push(vDate)
+            console.log(arr, vDate)
+        })
+
+        option = {
+            title: {
+                text: this.data.title || ''
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: this.data.ldata
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: this.data.xdata
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: arr
+        }
+        return option
+    },
     setOption() {
         this.myChart.setOption(this.option);
     },
