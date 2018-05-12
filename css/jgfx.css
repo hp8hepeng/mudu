@@ -8,6 +8,10 @@
 	width: calc(100% - 415px);
 	height: 100%;
 }
+.fd-left-box .content_content {
+	background: url(../images/icon-Bmap.png) center no-repeat;
+	background-size: 100% 100%;
+}
 .content {
 	margin-top: 0;
 }
