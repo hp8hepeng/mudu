@@ -302,7 +302,6 @@ EasyChart.prototype = {
             var vDate = JSON.parse(JSON.stringify(serieDate))
             vDate.name = that.data.ldata[k]
             vDate.data = v
-                // vDate.color = that.data.color
             arr.push(vDate)
             console.log(arr, vDate)
         })
@@ -310,11 +309,12 @@ EasyChart.prototype = {
             title: {
                 text: ''
             },
+            backgroundColor: '#fff',
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data:
+                data: this.data.ldata
             },
             grid: {
                 left: '3%',
@@ -330,14 +330,14 @@ EasyChart.prototype = {
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ,
+                data: this.data.xdata,
                 name: '(个)'
             },
             yAxis: {
                 type: 'value'
             },
             color: ['#9785f1', '#26c6da', '#1e88e5', '#edba62'],
-            series:
+            series: arr
         };
 
         return option

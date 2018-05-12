@@ -18,4 +18,12 @@ $(function() {
         // 回调 点击事件
         console.log(parme)
     })
+    $('#xzsp').EasyChart(arcLine, 'arcLine', function(parme) {
+        // 回调 点击事件
+        console.log(parme)
+    })
+    $('#ltqk').EasyChart(arcLine2, 'arcLine', function(parme) {
+        // 回调 点击事件
+        console.log(parme)
+    })
 })
