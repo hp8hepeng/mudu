@@ -12,7 +12,7 @@
     float: left;
     width:24px;
     height:23px;
-    background:url(../img/pic.png) no-repeat;
+    background:url(../images/pic.png) no-repeat;
     background-position:-29px 0;
     margin-top: 7px;
     margin-right: 5px;
@@ -21,7 +21,7 @@
     float: left;
     width:24px;
     height:23px;
-    background:url(../img/pic.png) no-repeat;
+    background:url(../images/pic.png) no-repeat;
     background-position:0 0;
     margin-top: 7px;
     margin-right: 5px;
@@ -30,7 +30,7 @@
     float: left;
     width:24px;
     height:23px; 
-    background:url(../img/pic.png) no-repeat;
+    background:url(../images/pic.png) no-repeat;
     background-position:-60px 0;
     margin-top: 7px;
     margin-right: 5px;
@@ -39,13 +39,13 @@
     float: left;
     width:24px;
     height:23px;
-    background:url(../img/pic.png) no-repeat;
+    background:url(../images/pic.png) no-repeat;
     background-position:-93px 0;
     margin-top: 7px;
     margin-right: 5px;
 }
 .nav_item:hover{
-    background:url(../img/hover_bg.png) no-repeat;
+    background:url(../images/hover_bg.png) no-repeat;
     background-size:100% 100%;
 }
 .nav_item:hover span{

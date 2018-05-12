@@ -45,7 +45,7 @@ body {
     background: #fff;
 }
 .active{
-    background:url(../img/hover_bg.png) no-repeat;
+    background:url(../images/hover_bg.png) no-repeat;
     background-size:100% 100%;
 }
 .active span{

@@ -11,12 +11,14 @@
     border-bottom:1px solid #d5dbe0;
     padding-left:15px;
     font-weight:600;
+    font-size:18px;
+    color: #465a63;
 }
 .title_pic{
     float:left;
     width:16px;
     height:17px;
-    background:url(../img/title_pic.png) no-repeat;
+    background:url(../images/title_pic.png) no-repeat;
     margin-top: 10px;
     margin-right: 10px;
 }
