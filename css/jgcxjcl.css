@@ -29,6 +29,20 @@
 	text-align: center;
 	color: #99abd6;
 }
+.fd-left-box .fd-qygjqk .fd-qygjqk-title {
+	text-align: left;
+	border-top: 1px dashed #d7dfe3;
+}
+.fd-left-box .fd-qygjqk .fd-qygjqk-title > span {
+	margin-right: 5px;
+	font-size: 12px;
+	color: #1560a2;
+}
+.fd-left-box .fd-qygjqk .fd-qygjqk-title > span > font {
+	font-size: 18px;
+	font-weight: bold;
+	color: #1560a2;
+}
 .fd-left-box .fd-jgwtxmgjqk {
 	height: 35%;
 	border-bottom: 1px solid #d5dcd0;
