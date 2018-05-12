@@ -9,5 +9,4 @@ let operator = {
         let iframe = $('#fd-Iframe');
         iframe.get(0).src = operator.ifarme(path)
     }
-
 }
