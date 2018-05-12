@@ -1,6 +1,6 @@
 .menu ul li {
     display: block;
-    width: 100%;
+    width: 140px;
     padding-top: 2px;
     margin-bottom: 5px;
     background: url(../../images/zakladka.png) top left no-repeat;
@@ -20,14 +20,7 @@
     outline: none;
     height: 30px;
     line-height: 30px;
-}
-
-.menu ul li .active {
-    /* background: url(../../images/on.png) top right no-repeat; */
-}
-
-© .menu ul li .inactive {
-    /* background: url(../../images/off.png) top right no-repeat; */
+    cursor: pointer;
 }
 
 .menu ul li ul {
@@ -55,7 +48,6 @@
     background: none;
     font-size: 12px;
     height: 30px;
-    color: #8f9d4c;
     padding-left: 0px;
     line-height: 30px;
 }
