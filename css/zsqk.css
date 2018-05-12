@@ -121,3 +121,55 @@ tr td {
 tr {
     border-left: 1px solid #ccc;
 }
+
+.fd-markLine {
+    width: 100% !important;
+    height: 100%;
+}
+
+.fd-markLine>div {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.fd-markLine>div div.fd-Linetitle {
+    width: 50px;
+    height: 80%;
+    text-align: center;
+    padding-left: 20px;
+    float: left;
+    position: relative;
+    background: #cff;
+    top: 2%;
+}
+
+.fd-markLine>div div.fd-Linetitle span {
+    display: block;
+    width: 12px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    line-height: 30px;
+    text-align: zz;
+    top: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+.fd-markLine .fd-markcont {
+    width: calc(100% - 50px);
+    height: 100%;
+    float: left;
+}
+
+.fd-markLine .fd-markcont>div {
+    height: 20%;
+    text-align: left;
+    text-indent: 10px;
+}
