@@ -6,46 +6,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../lib/jquery-1.8.3.min.js">
-    <link rel="stylesheet" href="../lib/leftNav/nav.css">
-    <link rel="stylesheet" href="../lib/leftNav/iconfont.css">
+    <!-- CSS DOCUMENT -->
+    <!-- 去除默认样式 -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- 全局样式 -->
+    <link rel="stylesheet" href="../css/common.css">
+    <!-- 头部 -->
+    <link rel="stylesheet" href="../css/head.css">
+    <!-- 左侧nav -->
+    <link rel="stylesheet" href="../lib/leftNav/menu-css.css">
+    <!-- lmwCont区域 -->
+
+    <!-- JS -->
     <script src="../lib/jquery-1.8.3.min.js"></script>
-    <script src="../lib/leftNav/nav.js"></script>
+    <script src="../lib/leftNav/menu_min.js"></script>
 </head>
 
 <body>
-    <div class="nav">
-        <div class="nav-top">
-            <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="images/mini.png"></div>
+    <div class="fd-app">
+        <!-- 上导航 -->
+        <div class="fd-header">
+            <div class="fd-logo floatL">
+                <h1>上海市药品安全监管和信息服务平台</h1>
+            </div>
+            <div class="fd-usar floatR">
+                <div class="fd-userHead floatL"></div>
+                <div class="fd-setMark floatL">
+                    <div>杜德森</div>
+                    <div>2017.02.23 10:00</div>
+                </div>
+            </div>
         </div>
-        <ul>
-            <li class="nav-item">
-                <a href="javascript:;"><i class="my-icon nav-icon icon_1"></i><span>网站配置</span><i class="my-icon nav-more"></i></a>
-                <ul>
-                    <li><a href="javascript:;"><span>网站设置</span></a></li>
-                    <li><a href="javascript:;"><span>友情链接</span></a></li>
-                    <li><a href="javascript:;"><span>分类管理</span></a></li>
-                    <li><a href="javascript:;"><span>系统日志</span></a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>文章管理</span><i class="my-icon nav-more"></i></a>
-                <ul>
-                    <li><a href="javascript:;"><span>站内新闻</span></a></li>
-                    <li><a href="javascript:;"><span>站内公告</span></a></li>
-                    <li><a href="javascript:;"><span>登录日志</span></a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>订单管理</span><i class="my-icon nav-more"></i></a>
-                <ul>
-                    <li><a href="javascript:;"><span>订单列表</span></a></li>
-                    <li><a href="javascript:;"><span>打个酱油</span></a></li>
-                    <li><a href="javascript:;"><span>也打酱油</span></a></li>
-                </ul>
-            </li>
-        </ul>
+
+        <div class="fd-content">
+            <!-- 左侧导航 -->
+            <div class="fd-leftNav">
+                <div class="menu">
+
+                    <ul>
+
+                        <li><a class="active" href="#">Item 1</a>
+
+                            <ul style="display: block;">
+
+                                <li><a href="#">Subitem 1</a></li>
+
+                                <li><a href="#">Subitem 2</a>
+
+                                    <ul>
+
+                                        <li><a href="#">Subitem 1</a></li>
+
+                                        <li><a href="#">Subitem 2</a></li>
+
+                                        <li><a href="#">Subitem 3</a></li>
+
+                                        <li><a href="#">Subitem 4</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><a href="#">Subitem 3</a></li>
+
+                                <li><a href="#">Subitem 4</a>
+
+                                    <ul>
+
+                                        <li><a href="#">Subitem 1</a></li>
+
+                                        <li><a href="#">Subitem 2</a></li>
+
+                                    </ul>
+
+                                </li>
+
+                                <li><a href="#">Subitem 5</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li><a href="#">Item 2</a>
+
+                            <ul>
+
+                                <li><a href="#">Subitem 1</a></li>
+
+                                <li><a href="#">Subitem 2</a></li>
+
+                                <li><a href="#">Subitem 3</a></li>
+
+                                <li><a href="#">Subitem 4</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li><a href="#">Item 3</a>
+
+                            <ul>
+
+                                <li><a href="#">Subitem 1</a></li>
+
+                                <li><a href="#">Subitem 2</a></li>
+
+                                <li><a href="#">Subitem 3</a></li>
+
+                                <li><a href="#">Subitem 4</a></li>
+
+                                <li><a href="#">Subitem 5</a></li>
+
+                                <li><a href="#">Subitem 6</a></li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+
+
+            </div>
+            <!-- 中心内容区 -->
+            <div class="fd-cont"></div>
+        </div>
     </div>
 </body>
+<script>
+    $(".menu ul li").menu();
+</script>
 
 </html>
