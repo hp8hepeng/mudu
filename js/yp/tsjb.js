@@ -121,9 +121,10 @@ $(function(){
         },
         legend: {
             data: ['信函','网络','留言','电话','来访','其他'],
-            top:'center',
-            left:'0',
-            orient:'vertical'
+            top:'bottom',
+            x:'center',
+          //  orient:'vertical',
+            width:'100%',
         },
         series : [
             {
@@ -171,9 +172,10 @@ $(function(){
         },
         legend: {
             data: ['原料药','化学药品','其他','中成药','中药材','医院制剂','中药饮片','生物制品','包材','辅料'],
-            top:'center',
-            left:'0',
-            orient:'vertical'
+            top:'bottom',
+            x:'center',
+            width:'100%',
+           // orient:'vertical'
         },
         series : [
             {
@@ -224,9 +226,9 @@ $(function(){
         },
         legend: {
             data: ['解释说明','参考备案','未解决','实际解决','诉求过高'],
-            top:'center',
-            left:'10%',
-            orient:'vertical'
+            top:'bottom',
+           // orient:'vertical',
+            width:'100%',
         },
         series : [
             {
