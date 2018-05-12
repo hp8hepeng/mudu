@@ -361,17 +361,19 @@ EasyChart.prototype = {
             },
             grid: {
                 left: '3%',
-                right: '4%',
+                right: '6%',
                 bottom: '3%',
                 containLabel: true
             },
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: this.data.xdata
+                data: this.data.xdata,
+                name: "年份"
             },
             yAxis: {
-                type: 'value'
+                type: 'value',
+                name: '药品种类数量'
             },
             series: arr
         }
