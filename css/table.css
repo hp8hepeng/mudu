@@ -122,3 +122,36 @@
 .fd-body .fd-card3 {
 	background-color: #9beca0;
 }
+.fd-sign.fd-table-th {
+	background: #fcf6ea;
+}
+.fd-table-th.fd-sign + .fd-body .fd-one {
+	background: #ff7070;
+	border-radius: 25%;
+	line-height: 14px;
+	color: #fff;
+}
+.fd-table-th.fd-sign + .fd-body .fd-two {
+	background: #ffbe33;
+	border-radius: 25%;
+	line-height: 14px;
+	color: #fff;
+}
+.fd-table-th.fd-sign + .fd-body .fd-three {
+	background: #85e561;
+	border-radius: 25%;
+	line-height: 14px;
+	color: #fff;
+}
+.fd-table-th.fd-sign + .fd-body .fd-four {
+	background: #33a6ff;
+	border-radius: 25%;
+	line-height: 14px;
+	color: #fff;
+}
+.fd-table-th.fd-sign + .fd-body .fd-five {
+	background: #be33ff;
+	border-radius: 25%;
+	line-height: 14px;
+	color: #fff;
+}
