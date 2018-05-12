@@ -55,7 +55,9 @@
 	float: left;
 	width: 50%;
 	height: 33.3333%;
+	padding: 5px;
+	border-bottom: 1px solid #e8e7e0;
 }
-.fd-right-box .content_content > div > div {
-	border: 1px solid red;
+.fd-right-box .content_content .fd-part.fd-half:nth-child(2n) {
+	border-left: 1px solid #e8e7e0;
 }
