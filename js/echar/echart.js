@@ -225,13 +225,18 @@ EasyChart.prototype = {
             barWidth: '10',
             barCategoryGap: '20'
         };
+
         var arr = new Array()
         var that = this
         $.each(this.data.data, function(k, v) {
             var vDate = JSON.parse(JSON.stringify(serieDate))
             vDate.name = that.data.ldata[k]
             vDate.data = v
-                // vDate.color = that.data.color
+
+            // vDate.color = that.data.color
+            if (that.data.isColor != undefined) {
+                vDate.itemStyle.normal.color = that.data.isColor[K]
+            }
             arr.push(vDate)
             console.log(arr, vDate)
         })
@@ -249,8 +254,6 @@ EasyChart.prototype = {
             grid: {
                 x: 40,
                 y: 40,
-                x2: 40,
-                y2: 40,
                 borderWidth: 1
             },
             color: this.data.color || [],
@@ -321,12 +324,7 @@ EasyChart.prototype = {
             color: ['#9785f1', '#26c6da', '#1e88e5', '#edba62'],
             series: arr
         };
-
         return option
-
-
-
-
     },
     setOption() {
         this.myChart.setOption(this.option);
