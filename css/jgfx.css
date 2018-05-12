@@ -24,3 +24,12 @@
 .fd-right-box .content:nth-last-child(1) {
 	margin-bottom: 0;
 }
+.fd-table-th.fd-cdfxqy + .fd-body p,
+.fd-table-th.fd-zdfxcp + .fd-body p,
+.fd-table-th.fd-zdfxcppz + .fd-body p {
+	width: 33.3333%;
+}
+.fd-table-th + .fd-body {
+	height: calc(100% - 35px);
+	margin-top: 5px;
+}
