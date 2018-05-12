@@ -21,13 +21,21 @@ body {
 }
 
 .fd-content>div.fd-leftNav {
-    width: 145px;
+    width: 160px;
     height: 100%;
     float: left;
+    overflow: auto;
+    position: relative;
+    z-index: 0;
+    padding-top: 10px;
 }
 
 .fd-cont {
     width: calc(100% - 145px);
     height: 100%;
     float: right;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    background: #fff;
 }
