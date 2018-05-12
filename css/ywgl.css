@@ -1,13 +1,7 @@
-.nav{
-    height:52px;
-    background:#fff;
-    display: flex;
-    line-height:52px;
-}
+
 body{
     background:#e7ecf1;
 }
-
 .container{
     width:100%;
     height:calc(100% - 100px);
