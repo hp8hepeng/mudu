@@ -17,10 +17,7 @@ function EasyChart(obj, data, type, callback) {
     this.option = eval('this.' + type + "()")
     this.setOption()
 
-    window.top.onresize = function(myChart) {
-        console.log(123)
-        myChart.resize();
-    }(this.myChart)
+
 }
 
 EasyChart.prototype = {
@@ -126,11 +123,9 @@ EasyChart.prototype = {
             backgroundColor: '#FFF',
             Color: ['#26c6da', '#9785f1', '#9785f1'],
             calculable: true,
-            series: [
-
-                {
+            series: [{
                     type: 'pie',
-                    radius: [30, 40],
+                    radius: ['35%', '50%'],
                     center: ['20%', 'center'],
                     avoidLabelOverlap: false,
                     label: {
@@ -141,7 +136,7 @@ EasyChart.prototype = {
                         emphasis: {
                             show: true,
                             textStyle: {
-                                fontSize: '10',
+                                fontSize: '20',
                                 fontWeight: 'bold'
                             }
                         }
@@ -157,7 +152,7 @@ EasyChart.prototype = {
                 {
                     name: '面积模式',
                     type: 'pie',
-                    radius: [30, 40],
+                    radius: ['35%', '50%'],
                     center: ['center', 'center'],
                     avoidLabelOverlap: false,
                     label: {
@@ -168,7 +163,7 @@ EasyChart.prototype = {
                         emphasis: {
                             show: true,
                             textStyle: {
-                                fontSize: '10',
+                                fontSize: '20',
                                 fontWeight: 'bold'
                             }
                         }
@@ -183,7 +178,7 @@ EasyChart.prototype = {
                 {
                     name: '面积模式',
                     type: 'pie',
-                    radius: [30, 40],
+                    radius: ['35%', '50%'],
                     center: ['80%', 'center'],
                     avoidLabelOverlap: false,
                     label: {
@@ -194,7 +189,7 @@ EasyChart.prototype = {
                         emphasis: {
                             show: true,
                             textStyle: {
-                                fontSize: '10',
+                                fontSize: '20',
                                 fontWeight: 'bold'
                             }
                         }
@@ -235,13 +230,15 @@ EasyChart.prototype = {
 
             // vDate.color = that.data.color
             if (that.data.isColor != undefined) {
-                vDate.itemStyle.normal.color = that.data.isColor[K]
+                vDate.itemStyle.normal.color = eval('(' + that.data.isColor[k] + ')');
             }
             arr.push(vDate)
-            console.log(arr, vDate)
         })
 
         option = {
+            title: {
+                text: this.data.title || ''
+            },
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -252,9 +249,10 @@ EasyChart.prototype = {
                 }
             },
             grid: {
-                x: 40,
-                y: 40,
-                borderWidth: 1
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
             },
             color: this.data.color || [],
             legend: {
@@ -284,7 +282,12 @@ EasyChart.prototype = {
             type: 'line',
             stack: '总量',
             data: [],
-            smooth: true
+            smooth: true,
+            areaStyle: {
+                normal: {
+
+                }
+            }
         };
         var arr = new Array()
         var that = this
@@ -292,6 +295,8 @@ EasyChart.prototype = {
             var vDate = JSON.parse(JSON.stringify(serieDate))
             vDate.name = that.data.ldata[k]
             vDate.data = v
+            vDate.areaStyle.normal.color = that.data.color[k] || ''
+            vDate.areaStyle.normal.opacity = '0.2';
             arr.push(vDate)
             console.log(arr, vDate)
         })
@@ -324,6 +329,55 @@ EasyChart.prototype = {
             color: ['#9785f1', '#26c6da', '#1e88e5', '#edba62'],
             series: arr
         };
+        return option
+    },
+    // 普通线形图
+    setLine() {
+        var serieDate = {
+            name: '',
+            type: 'line',
+            stack: '总量',
+            data: []
+        }
+        var arr = new Array()
+        var that = this
+        $.each(this.data.data, function(k, v) {
+            var vDate = JSON.parse(JSON.stringify(serieDate))
+            vDate.name = that.data.ldata[k]
+            vDate.data = v
+            arr.push(vDate)
+            console.log(arr, vDate)
+        })
+
+        option = {
+            title: {
+                text: this.data.title || ''
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: this.data.ldata
+            },
+            grid: {
+                left: '3%',
+                right: '6%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: this.data.xdata,
+                name: "年份"
+            },
+            yAxis: {
+                type: 'value',
+                name: '药品种类数量'
+            },
+            backgroundColor: '#fff',
+            series: arr
+        }
         return option
     },
     setOption() {

@@ -51,3 +51,7 @@
     padding-left: 0px;
     line-height: 30px;
 }
+
+.menu a.active {
+    color: #8f9d4c !important;
+}
