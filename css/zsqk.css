@@ -1,19 +1,23 @@
 .fd-topCont,
-.fd-botCont {
+.fd-botCont,
+.fd-centCont {
     width: 100%;
     height: 50%;
 }
 
-.fd-topCont {
+.fd-topCont,
+.fd-centCont {
     box-shadow: 1px 1px 3px 1px #ccc;
 }
 
-.fd-botCont {
+.fd-botCont,
+.fd-centCont {
     padding-top: 10px;
 }
 
 .fd-topCont>div,
-.fd-botCont>div {
+.fd-botCont>div,
+.fd-centCont>div {
     width: 50%;
     height: 100%;
     float: left;
@@ -46,4 +50,13 @@
     font-size: 16px;
     color: #000;
     text-indent: 20px;
+}
+
+.fd-mark div.fd-nameMark span {
+    float: right;
+    margin-right: 40px;
+}
+
+body {
+    overflow-y: auto;
 }
