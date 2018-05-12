@@ -1,12 +1,13 @@
 .nav{
-    height:52px;
+    height:48px;
     background:#fff;
     display: flex;
-    line-height:52px;
+    line-height:48px;
     box-shadow:10px 5px 2px #dde4ea;
 }
 .nav div{
     margin-left:50px;
+		font-size: 14px;
 }
 .pic_1{
     float: left;

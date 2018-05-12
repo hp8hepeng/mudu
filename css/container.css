@@ -5,12 +5,17 @@
     box-shadow:10px 5px 5px #dde4ea;
 }
 .content_title{
-    height:40px;
-    line-height:40px;
+    height:36px;
+    line-height:36px;
     background:#eef1f2;
+	font-size: 14px;
     border-bottom:1px solid #d5dbe0;
     padding-left:15px;
     font-weight:600;
+}
+.content_title.fd-sign {
+	background: #fcf6ea;
+	border-bottom: 1px solid #ebd6ab;
 }
 .title_pic{
     float:left;
@@ -19,6 +24,9 @@
     background:url(../img/title_pic.png) no-repeat;
     margin-top: 10px;
     margin-right: 10px;
+}
+.content_title.fd-sign .title_pic {
+	background:url(../img/title_sign_pic.png) no-repeat;
 }
 .content_content{
     height:calc(100% - 40px);
