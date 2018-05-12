@@ -235,13 +235,17 @@ EasyChart.prototype = {
 
             // vDate.color = that.data.color
             if (that.data.isColor != undefined) {
-                vDate.itemStyle.normal.color = that.data.isColor[K]
+                vDate.itemStyle.normal.color = eval('(' + that.data.isColor[k] + ')');
             }
+            console.log(vDate)
             arr.push(vDate)
             console.log(arr, vDate)
         })
 
         option = {
+            title: {
+                text: this.data.title || ''
+            },
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
