@@ -375,6 +375,7 @@ EasyChart.prototype = {
                 type: 'value',
                 name: '药品种类数量'
             },
+            backgroundColor: '#fff',
             series: arr
         }
         return option
