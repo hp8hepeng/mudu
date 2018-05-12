@@ -25,9 +25,9 @@
     <!-- 左侧导航JS -->
     <script src="../lib/leftNav/menu_min.js"></script>
     <!-- 整体JS事件 -->
+    <script src="../js/operator.js"></script>
+
     <script src="../js/index.js"></script>
-    <!-- 全局JS事件 -->
-    <script src="../js/common.js"></script>
 </head>
 
 <body>
@@ -51,49 +51,46 @@
             <div class="fd-leftNav">
                 <div class="menu">
                     <ul>
-                        <li><a class="active" id="ywfx">业务分析</a>
+                        <li><a id="ywfx">业务分析</a>
                             <ul style="display: block;">
-                                <li><a>业务概览</a></li>
-                                <li><a>药品</a>
+                                <li><a data-router="ywgl">业务概览</a></li>
+                                <li><a data-router="ywgl">药品</a><i></i>
                                     <ul>
-                                        <li><a>业务概览</a>
+                                        <li><a>业务概览</a><i></i>
                                             <ul>
-                                                <li><a>监管相对人情况</a></li>
-                                                <li><a>行政审批情况</a></li>
-                                                <li><a>监督检查情况</a></li>
-                                                <li><a>投诉举报情况</a></li>
-                                                <li><a>稽查办案情况</a></li>
-                                                <li><a>追溯情况</a></li>
+                                                <li><a data-router="ywgl">监管相对人情况</a></li>
+                                                <li><a data-router="ywgl">行政审批情况</a></li>
+                                                <li><a data-router="ywgl">监督检查情况</a></li>
+                                                <li><a data-router="ywgl">投诉举报情况</a></li>
+                                                <li><a data-router="ywgl">稽查办案情况</a></li>
+                                                <li><a data-router="ywgl">追溯情况</a></li>
                                             </ul>
 
                                         </li>
-                                        <li><a>业务特征分析</a></li>
-                                        <li><a>业务异常分析</a></li>
-                                        <li><a>监督成效分析</a></li>
-                                        <li><a>监管策略分析</a></li>
-                                        <li><a>监管风险分析</a></li>
+                                        <li><a data-router="ywgl">业务特征分析</a></li>
+                                        <li><a data-router="ywgl">业务异常分析</a></li>
+                                        <li><a data-router="ywgl">监督成效分析</a></li>
+                                        <li><a data-router="ywgl">监管策略分析</a></li>
+                                        <li><a data-router="ywgl">监管风险分析</a></li>
                                     </ul>
                                 </li>
-                                <li><a>医疗器械</a></li>
-                                <li><a>化妆品</a></li>
-                                <li><a>专题分析</a></li>
-                                <li><a>敏捷分析</a></li>
+                                <li><a data-router="ywgl">医疗器械</a></li>
+                                <li><a data-router="ywgl">化妆品</a></li>
+                                <li><a data-router="ywgl">专题分析</a></li>
+                                <li><a data-router="ywgl">敏捷分析</a></li>
                             </ul>
                         </li>
-                        <li><a id="tyjs">同意检索</a></li>
-                        <li><a id="yyfl">应用管理</a></li>
+                        <li><a data-router="ywgl" id="tyjs">同意检索</a></li>
+                        <li><a data-router="ywgl" id="yyfl">应用管理</a></li>
                     </ul>
                 </div>
             </div>
             <!-- 中心内容区 -->
             <div class="fd-cont">
-                <iframe id="fd-myIframe" frameborder="0" width="100%" height="100%"></iframe>
+                <iframe id="fd-Iframe" frameborder="0" width="100%" height="100%"></iframe>
             </div>
         </div>
     </div>
 </body>
-<script>
-    $(".menu ul li").menu();
-</script>
 
 </html>
