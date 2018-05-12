@@ -39,3 +39,13 @@ body {
     right: 0;
     background: #fff;
 }
+.active{
+    background:url(../img/hover_bg.png) no-repeat;
+    background-size:100% 100%;
+}
+.active span{
+    background-position-y:-23px;
+}
+.active a{
+    color:#fff !important;
+}
