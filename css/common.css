@@ -1,0 +1,33 @@
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.fd-app {
+    width: 100%;
+    height: 100%;
+}
+
+.fd-header {
+    height: 80px;
+    width: 100%;
+}
+
+.fd-content {
+    height: calc(100% - 80px);
+    width: 100%;
+}
+
+.fd-content>div.fd-leftNav {
+    width: 145px;
+    height: 100%;
+    float: left;
+}
+
+.fd-cont {
+    width: calc(100% - 145px);
+    height: 100%;
+    float: right;
+}
