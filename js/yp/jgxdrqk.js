@@ -1,6 +1,5 @@
 
 $(function(){
-    alert("aaa")
     var myChart = echarts.init(document.getElementById("line"));
     var mychart_line3 =echarts.init(document.getElementById("line3"));
     var mychart_line4 =echarts.init(document.getElementById("line4"));
