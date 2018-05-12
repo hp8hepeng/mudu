@@ -77,7 +77,8 @@
 .fd-body p:nth-child(3){
     padding-left:35px;
 }
-.content_top .fd-body{
+.content_top .fd-body,
+.content_center .fd-body {
     height:calc(100% - 60px);
 }
 .content_top .fd-body div,.content_center .fd-body div{
