@@ -124,19 +124,6 @@ EasyChart.prototype = {
                 data: xData
             },
             backgroundColor: '#FFF',
-            toolbox: {
-                show: true,
-                feature: {
-                    mark: { show: true },
-                    dataView: { show: true, readOnly: false },
-                    magicType: {
-                        show: true,
-                        type: ['pie', 'funnel']
-                    },
-                    restore: { show: true },
-                    saveAsImage: { show: true }
-                }
-            },
             Color: ['#26c6da', '#9785f1', '#9785f1'],
             calculable: true,
             series: [
@@ -321,11 +308,6 @@ EasyChart.prototype = {
                 right: '4%',
                 bottom: '3%',
                 containLabel: true
-            },
-            toolbox: {
-                feature: {
-                    saveAsImage: {}
-                }
             },
             xAxis: {
                 type: 'category',
