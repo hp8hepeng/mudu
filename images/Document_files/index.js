@@ -1,0 +1,3 @@
+$(function() {
+    operator.init()
+})

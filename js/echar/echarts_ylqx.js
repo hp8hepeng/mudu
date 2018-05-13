@@ -29,57 +29,79 @@ EasyChart.prototype = {
     Treemap() {
         option = {
             tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'cross',
-                    crossStyle: {
-                        color: '#999'
+                formatter: function(info) {
+                    var value = info.data.value;
+                    var type = ''
+                    if (info.data.type == 'up') {
+                        type = "↑"
+                    } else if (info.data.type == 'down') {
+                        type = "↓"
+                    }
+                    return [
+                        '数据: ' + value + type,
+                    ].join('');
+                }
+            },
+            backgroundColor: '#FFF',
+            label: {
+                normal: {
+                    position: 'insideTopLeft',
+                    formatter: function(params) {
+                        var arr = [
+                            '{name|' + params.data.name + '}',
+                            '{hr|}',
+                            '{budget| ' + echarts.format.addCommas(params.data.value) + '}'
+                        ];
+
+                        // arr.push(
+                        //     '{household| ' + echarts.format.addCommas(params.data.infovalue) + '}'
+                        // );
+                        return arr.join('\n');
+                    },
+                    rich: {
+                        budget: {
+                            fontSize: 22,
+                            lineHeight: 30,
+                            color: 'yellow'
+                        },
+                        household: {
+                            fontSize: 14,
+                            color: '#fff'
+                        },
+                        label: {
+                            fontSize: 9,
+                            backgroundColor: 'rgba(0,0,0,0.3)',
+                            color: '#fff',
+                            borderRadius: 2,
+                            padding: [2, 4],
+                            lineHeight: 25,
+                            align: 'right'
+                        },
+                        name: {
+                            fontSize: 12,
+                            color: '#fff'
+                        },
+                        hr: {
+                            width: '100%',
+                            borderColor: 'rgba(255,255,255,0.2)',
+                            borderWidth: 0.5,
+                            height: 0,
+                            lineHeight: 10
+                        }
                     }
                 }
             },
-            legend: {
-                data: ['售卖', '生产']
-            },
-            xAxis: [{
-                type: 'category',
-                data: ['零售企业', '连锁企业', '生产企业', '医疗机构', '批发企业'],
-                axisPointer: {
-                    type: 'shadow'
-                }
-            }],
-            yAxis: [{
-                    type: 'value',
-                    name: '',
-                    axisLabel: {
-                        formatter: '{value}'
-                    },
-                    splitLine: {
-                        show: false
-                    }
-                },
-                {
-                    name: '',
-                    axisLabel: {
-                        formatter: '{value}'
-                    },
-                    splitLine: {
-                        show: false
-                    }
-                }
-            ],
             series: [{
-                    name: '售卖',
-                    type: 'bar',
-                    data: [3464, 750, 720, 100, 200]
+                type: 'treemap',
+                itemStyle: {
+                    normal: {
+                        borderColor: '#fff'
+                    }
                 },
-                {
-                    name: '生产',
-                    type: 'line',
-                    yAxisIndex: 1,
-                    data: [100, 1, 1, 2, 0, 5]
-                }
-            ]
-        };
+                data: this.data,
+                color: ['#2894f2', '#9bcffd']
+            }]
+        }
         return option
     },
     // 三个联动pie 统一按钮控制
@@ -102,31 +124,31 @@ EasyChart.prototype = {
             Color: ['#26c6da', '#9785f1', '#9785f1'],
             calculable: true,
             series: [{
-                    type: 'pie',
-                    radius: ['35%', '50%'],
-                    center: ['20%', 'center'],
-                    avoidLabelOverlap: false,
-                    label: {
-                        normal: {
-                            show: false,
-                            position: 'center'
-                        },
-                        emphasis: {
-                            show: true,
-                            textStyle: {
-                                fontSize: '20',
-                                fontWeight: 'bold'
-                            }
-                        }
+                type: 'pie',
+                radius: ['35%', '50%'],
+                center: ['20%', 'center'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
                     },
-                    labelLine: {
-                        normal: {
-                            show: false
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '20',
+                            fontWeight: 'bold'
                         }
-                    },
-                    data: this.data[0],
-                    color: ['#26c6da', '#9785f1', '#1e88e5']
+                    }
                 },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: this.data[0],
+                color: ['#26c6da', '#9785f1', '#1e88e5']
+            },
                 {
                     name: '面积模式',
                     type: 'pie',
@@ -366,7 +388,7 @@ EasyChart.prototype = {
                 formatter: "{a} <br/>{b}: {c} ({d}%)"
             },
             title: {
-                text: ' 药品抽验情况',
+                text: this.data.title,
                 x: 'center',
             },
             legend: {
@@ -376,27 +398,27 @@ EasyChart.prototype = {
                 data: ['国抽批次数', '市抽批次数', '其他', '合格', '不合格']
             },
             series: [{
-                    name: '药品抽检情况',
-                    type: 'pie',
-                    selectedMode: 'single',
-                    radius: [0, '60%'],
+                name: '药品抽检情况',
+                type: 'pie',
+                selectedMode: 'single',
+                radius: [0, '60%'],
 
-                    label: {
-                        normal: {
-                            position: 'inner'
-                        }
-                    },
-                    labelLine: {
-                        normal: {
-                            show: false
-                        }
-                    },
-                    data: [
-                        { value: 1000, name: '国抽批次数' },
-                        { value: 1600, name: '市抽批次数' },
-                        { value: 800, name: '其他' }
-                    ]
+                label: {
+                    normal: {
+                        position: 'inner'
+                    }
                 },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [
+                    { value: 1000, name: '国抽批次数' },
+                    { value: 1600, name: '市抽批次数' },
+                    { value: 800, name: '其他' }
+                ]
+            },
                 {
                     name: '药品抽检情况',
                     type: 'pie',
@@ -498,7 +520,7 @@ EasyChart.prototype = {
                 }
             },
             title: {
-                text: '药品抽检情况(按事二级分类)',
+                text:"抽检任务分类情况",
                 x: 'left'
             },
             legend: {
@@ -509,17 +531,22 @@ EasyChart.prototype = {
             xAxis: [{
                 type: 'category',
                 axisTick: { show: false },
-                data: ['专题/专项抽验', '摸底性抽验', '评价性抽验', '监督性抽验', '涉案抽验']
+                data: ['专题/专项抽验', '摸底性抽验', '评价性抽验', '监督性抽验', '涉案抽验'],
+                axisLabel: {
+                    //rotate: 25
+                    fontSize:18
+                }
+
             }],
             yAxis: [{
                 type: 'value'
             }],
             series: [{
-                    name: '合格',
-                    type: 'bar',
-                    barGap: 0,
-                    data: [320, 332, 301, 334, 390]
-                },
+                name: '合格',
+                type: 'bar',
+                barGap: 0,
+                data: [320, 332, 301, 334, 390]
+            },
                 {
                     name: '不合格',
                     type: 'bar',
@@ -540,7 +567,7 @@ EasyChart.prototype = {
                 }
             },
             title: {
-                text: '各药品品种抽样情况',
+                text: this.data.title,
                 x: 'left'
             },
             legend: {
@@ -551,24 +578,25 @@ EasyChart.prototype = {
             xAxis: [{
                 type: 'category',
                 axisTick: { show: false },
-                data: ['H-化学药品', 'Z-中药', 'B-保健药品', 'S-生物制品', 'T-体外化学诊断试剂', 'F-药用辅料', 'J-进口分包装药品'],
+                data: ['I类','II类','III类'],
                 axisLabel: {
-                    rotate: 25
+                    //rotate: 25
+                    fontSize:18
                 }
             }],
             yAxis: [{
                 type: 'value'
             }],
             series: [{
-                    name: '合格',
-                    type: 'bar',
-                    barGap: 0,
-                    data: [320, 332, 301, 334, 390, 350, 320]
-                },
+                name: '合格',
+                type: 'bar',
+                barGap: 0,
+                data: [320, 332, 301]
+            },
                 {
                     name: '不合格',
                     type: 'bar',
-                    data: [20, 18, 19, 34, 20, 22, 20]
+                    data: [20, 18, 19]
                 },
 
             ]
@@ -623,215 +651,13 @@ EasyChart.prototype = {
         };
         return option
     },
-    linefiv() {
-        option = {
-            title: {
-                text: '年度流通量大药品流通量变化趋势 ',
-                top: 20
-            },
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: ['1号药品', '2号药品', '3号药品', '4号药品', '5号药品']
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: ['1月', '2月', '3月', '4月', '5月', '7月', '8月', '9月', '10月', '11月', '12月']
-            },
-            yAxis: {
-                type: 'value'
-            },
-            series: [{
-                    name: '1号药品',
-                    type: 'line',
-                    stack: '总量',
-                    data: [234212, 435324, 235633, 245632, 234563, 234535, 234676, 234213, 234213, 123455, 123421]
-                },
-                {
-                    name: '2号药品',
-                    type: 'line',
-                    stack: '总量',
-                    data: [234213, 345445, 346323, 345636, 356757, 467544, 346456, 353453, 353563, 446464, 445345]
-                },
-                {
-                    name: '3号药品',
-                    type: 'line',
-                    stack: '总量',
-                    data: [454564, 457456, 467456, 467567, 476335, 463546, 456446, 456735, 463464, 462446, 462462]
-                },
-                {
-                    name: '4号药品',
-                    type: 'line',
-                    stack: '总量',
-                    data: [567566, 584674, 583536, 573463, 524356, 573775, 573246, 573573, 584684, 537337, 583583]
-                },
-                {
-                    name: '5号药品',
-                    type: 'line',
-                    stack: '总量',
-                    data: [69848, 68484, 694846, 684836, 626727, 673273, 737367, 788537, 763573, 737333, 734325]
-                }
-            ]
-        }
-        return option;
-    },
-    jgclfxBar() {
-
-        option = {
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'cross',
-                    crossStyle: {
-                        color: '#999'
-                    }
-                }
-            },
-            title: {
-                text: this.data.title,
-                top: 10,
-                left: 10
-            },
-            legend: {
-                data: ['企业数量']
-            },
-            xAxis: [{
-                type: 'category',
-                data: ['0', '1', '2', '3'],
-                axisPointer: {
-                    type: 'shadow'
-                }
-            }],
-            yAxis: [{
-                type: 'value',
-                name: '企业数量'
-            }],
-            series: [{
-                name: '企业数量',
-                type: 'bar',
-                data: this.data.data,
-                barWidth: '30',
-                barCategoryGap: '20',
-                itemStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(
-                            0, 0, 0, 1, [
-                                { offset: 0, color: '#83bff6' },
-                                { offset: 0.5, color: '#188df0' },
-                                { offset: 1, color: '#188df0' }
-                            ]
-                        )
-                    },
-                    emphasis: {
-                        color: new echarts.graphic.LinearGradient(
-                            0, 0, 0, 1, [
-                                { offset: 0, color: '#2378f7' },
-                                { offset: 0.7, color: '#2378f7' },
-                                { offset: 1, color: '#83bff6' }
-                            ]
-                        )
-                    }
-                },
-            }]
-        };
-        return option
-    },
-    setLine4() {
-        option = {
-            title: {
-                text: '年度流通量排名前五医疗器械',
-                top: 20
-            },
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'cross',
-                    label: {
-                        backgroundColor: '#6a7985'
-                    }
-                }
-            },
-            legend: {
-                data: ['第五名', '第四名', '第三名', '第二名', '第一名']
-            },
-            toolbox: {
-                feature: {
-                    saveAsImage: {}
-                }
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            xAxis: [{
-                type: 'category',
-                boundaryGap: false,
-                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
-            }],
-            yAxis: [{
-                type: 'value'
-            }],
-            series: [{
-                    name: '第五名',
-                    type: 'line',
-                    stack: '采购量',
-                    areaStyle: { normal: {} },
-                    data: [4534, 4634, 4452, 4526, 5784, 4673, 4678, 4673, 4673, 4689, 5213, 5323]
-                },
-                {
-                    name: '第四名',
-                    type: 'line',
-                    stack: '采购量',
-                    areaStyle: { normal: {} },
-                    data: [5356, 5763, 5768, 5673, 5768, 5743, 5784, 5895, 5784, 5783, 5784, 5798]
-                },
-                {
-                    name: '第三名',
-                    type: 'line',
-                    stack: '采购量',
-                    areaStyle: { normal: {} },
-                    data: [5756, 5789, 6789, 6895, 6885, 6837, 5784, 6342, 6884, 6895, 6943, 6846]
-                },
-                {
-                    name: '第二名',
-                    type: 'line',
-                    stack: '采购量',
-                    areaStyle: { normal: {} },
-                    data: [6884, 6899, 6873, 6988, 6995, 7534, 6785, 7996, 7895, 7899, 6685, 7895]
-                },
-                {
-                    name: '第一名',
-                    type: 'line',
-                    stack: '采购量',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'top'
-                        }
-                    },
-                    areaStyle: { normal: {} },
-                    data: [8688, 9656, 7689, 8966, 9665, 7855, 8685, 9668, 5888, 8998, 9678, 9665, 8564, ]
-                }
-            ]
-        };
-        return option
-    },
     setOption() {
         this.myChart.setOption(this.option);
     },
     clickBack() {
         if (this.callback != 'undefined') {
             this.myChart.on('click', function(params) {
+                console.log(params)
                 this.callback(params)
             });
         }

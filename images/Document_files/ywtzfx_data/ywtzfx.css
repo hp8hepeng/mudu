@@ -1,0 +1,174 @@
+fd-pmdom {
+    width: 100%;
+    height: 100px;
+    box-shadow: 1px 1px 2px 1px #ccc;
+}
+
+body {
+    overflow-y: auto !important;
+}
+
+.fd-pmdom>div {
+    float: left;
+    width: 33%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 0.2%;
+    box-shadow: 1px 1px 2px 1px #ccc;
+}
+
+.fd-pmdom>div:not(:last-child) {
+    border-right: 1px solid #ccc
+}
+
+.fd-pmdom .fd-titName {
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+.fd-pmdom .fd-pmcoNT {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.fd-pmdom .fd-pmcoNT>div {
+    width: 33.3%;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.fd-sfdom {
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+}
+
+.fd-sfdom>div {
+    float: left;
+    width: 24.5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 0.4%;
+    box-shadow: 1px 1px 2px 1px #ccc;
+}
+
+.fd-pmMark {
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.fd-pmMark span {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    width: 40%;
+    float: left;
+}
+
+.fd-pmMark span:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+.fd-pmMark span.fd-num {
+    width: 20%;
+}
+
+.fd-TitName {
+    height: 50px;
+    background: #badcf7;
+    color: #000;
+    text-align: left;
+    text-indent: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.fd-gqdb {
+    width: 100%;
+}
+
+.fd-gqdb>div.fd-qqMarl {
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+
+.fd-gqdb>div.fd-qqMarl span {
+    float: left;
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.fd-gqdb>div.fd-qqMarl:nth-child(odd) {
+    border-right: 1px solid #ccc;
+}
+
+.fd-jgjgtz {
+    width: 100%;
+}
+
+.fd-jgjgtz .jgs,
+.fd-jgjgtz .jgb {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px #ccc;
+    float: left;
+    border: 1px solid #ccc;
+}
+
+.fd-jgjgtz .jgs {
+    width: 24%;
+    margin-right: 1%;
+}
+
+.fd-jgjgtz .jgb {
+    width: 50%;
+}
+
+.fd-jgjgtz>div .fd-titNa,
+.fd-jgjgtz>div .fd-mark2 {
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+}
+
+.fd-jgjgtz>div .fd-titNa {
+    font-size: 16px;
+    text-align: center;
+    background: rgba(46, 238, 245, 0.8)
+}
+
+.fd-jgjgtz>div .fd-mark2 span {
+    display: block;
+    height: 40px;
+    float: left;
+    width: 33.3%;
+    text-align: center;
+    line-height: 40px;
+}
+
+.fd-jgjgtz>div.jgb .fd-mark2 span {
+    width: 20%;
+}

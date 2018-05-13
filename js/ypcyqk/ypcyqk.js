@@ -4,7 +4,7 @@ $(function() {
     // })
     config = {}
     setTimeout(() => {
-        config.a1 = $('#fd-E01').EasyChart({}, 'qthxt', function(parme) {
+        config.a1 = $('#fd-E01').EasyChart({ 'title': '药品抽验情况' }, 'qthxt', function(parme) {
             // 回调 点击事件
             console.log(parme)
         })
@@ -29,7 +29,7 @@ $(function() {
             // 回调 点击事件
             console.log(parme)
         })
-        config.a7 = $('#fd-E07').EasyChart({}, 'twobar2', function(parme) {
+        config.a7 = $('#fd-E07').EasyChart({ "title": '各药品品种抽样情况' }, 'twobar2', function(parme) {
             // 回调 点击事件
             console.log(parme)
         })

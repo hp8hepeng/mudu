@@ -1,0 +1,59 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.fd-pd10 {
+	padding: 10px;
+}
+.fd-app {
+    width: 100%;
+    height: 100%;
+}
+
+.fd-header {
+    height: 80px;
+    width: 100%;
+}
+
+.fd-content {
+	position: relative;
+    height: calc(100% - 80px);
+    width: 100%;
+}
+
+.fd-content>div.fd-leftNav {
+    width: 160px;
+    height: 100%;
+    float: left;
+    overflow: auto;
+    position: relative;
+    z-index: 0;
+    padding-top: 10px;
+}
+
+.fd-cont {
+    width: calc(100% - 170px);
+    height: 100%;
+    float: right;
+    position: absolute;
+    z-index: 2;
+	top: 0;
+    right: 0;
+	bottom: 0;
+    background: #fff;
+}
+.active{
+    background:url(../images/hover_bg.png) no-repeat;
+    background-size:100% 100%;
+}
+.active span{
+    background-position-y:-23px;
+}
+.active a{
+    color:#fff !important;
+}
+.fd-l-pd10{
+    padding-left:10px;
+}

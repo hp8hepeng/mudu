@@ -1,0 +1,66 @@
+.fd-leftNav {
+    background: #1e2852;
+}
+
+.menu>ul>li>a {
+    width: 135px;
+    height: 35px;
+    border-radius: 5px;
+    line-height: 35px;
+    margin-left: 5px;
+    color: #e2edf8 !important;
+    text-indent: 50px;
+}
+
+.fd-leftNav .menu ul li a {
+    font-size: 12px;
+    font-family: "MicrosoftYaHei";
+    color: #e2edf8;
+    position: relative;
+}
+
+#ywfx {
+    background: #1971cb url('../images/icon-ywfx.png') no-repeat 15px center;
+}
+
+#tyjs {
+    background: #1971cb url('../images/icon-tijs.png') no-repeat 15px center;
+}
+
+#yyfl {
+    background: #1971cb url('../images/icon-yygl.png') no-repeat 15px center;
+}
+
+.menu>ul>li>ul {
+    margin-top: 10px;
+}
+
+.menu>ul>li>ul a~i {
+    width: 26px;
+    height: 26px;
+    background: url('../images/off.png') no-repeat center center;
+    position: absolute;
+    left: 60px;
+    top: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(0deg);
+    transition: 0.1s;
+}
+
+.menu>ul>li>ul li {
+    position: relative;
+}
+
+.menu>ul>li>ul a~i.inactive {
+    width: 26px;
+    height: 26px;
+    background: url('../images/off.png') no-repeat center center;
+    position: absolute;
+    left: 60px;
+    top: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(90deg);
+    left: 50px;
+}

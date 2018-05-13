@@ -5,7 +5,7 @@ $(function() {
             // 回调 点击事件
             console.log(parme)
         })
-        config.a2 = $('#fd-E02').EasyChart(setLine1, 'setLine', function(parme) {
+        config.a2 = $('#fd-E02').EasyChart(setLine2, 'setLine', function(parme) {
             // 回调 点击事件
             console.log(parme)
         })

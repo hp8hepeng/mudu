@@ -1,0 +1,32 @@
+.fd-Echart {
+    width: 100%;
+    height: 750px;
+}
+
+.fd-Echart>div {
+    width: 50%;
+    height: 750px;
+    float: left;
+}
+
+.fd-jgjg>div {
+    width: 100% !important;
+}
+
+.fd-jgjgtz5 .jgst span {
+    width: 33.3% !important;
+}
+
+.fd-jgjgtz5 {
+    margin-top: 20px;
+}
+
+.fd-jgjg span {
+    width: 25% !important;
+}
+
+#E_cl01,
+#E_cl02 {
+    width: 100;
+    height: 50%;
+}

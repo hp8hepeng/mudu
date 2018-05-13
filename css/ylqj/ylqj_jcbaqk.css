@@ -1,0 +1,40 @@
+.fd-png {
+    width: 100%;
+    height: 100%;
+    background: url('../../images/jc.png') no-repeat center center / 100% 100%;
+}
+
+body {
+    overflow-y: auto;
+}
+
+.fd-markcont {
+    width: 100%;
+    height: 50%;
+}
+
+.fd-markcont>div {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.fd-png2 {
+    width: 100%;
+    height: 100%;
+}
+
+.fd-divDom {
+    width: 100%;
+    height: calc(100% - 50px);
+    background: url('../../images/jc2.png') no-repeat center center / 100% 100%;
+}
+
+.fd-png2 h3 {
+    background: #fff;
+    font-weight: bold;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+}
