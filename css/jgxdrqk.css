@@ -71,3 +71,12 @@ body{
 .fd-box:nth-child(3){
     background: #ffffff;
 }
+.fd-table-th.fd-tsjblx-tab + .fd-body p {
+    width: 33.3333%;
+}
+.fd-spe-box .content_content{
+    height:100%;
+}
+.fd-table-th + .fd-body {
+    margin-top: 10px;
+}
